@@ -9,6 +9,7 @@ import com.ctrip.framework.apollo.portal.spi.UserService;
 import com.ctrip.framework.apollo.portal.spi.springsecurity.SpringSecurityUserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +36,7 @@ public class UserInfoController {
   private UserService userService;
 
 
+  @PreAuthorize(value = "@permissionValidator.isSuperAdmin()")
   @RequestMapping(value = "/users", method = RequestMethod.POST)
   public void createOrUpdateUser(@RequestBody User user) {
     if (StringUtils.isContainEmpty(user.getUsername(), user.getPassword())) {
