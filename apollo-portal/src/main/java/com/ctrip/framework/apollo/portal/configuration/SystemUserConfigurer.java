@@ -44,7 +44,7 @@ public class SystemUserConfigurer extends WebSecurityConfigurerAdapter {
 
     auth.userDetailsService(userDetailsService).passwordEncoder(encoder);
     auth.jdbcAuthentication().dataSource(datasource).usersByUsernameQuery(
-        "select username,password, enabled from Users where username=?");
+        "select username,password, enabled from users where username=?");
   }
 
 }
