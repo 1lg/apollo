@@ -11,10 +11,10 @@ apollo_portal_db_username=root
 apollo_portal_db_password=P@ssword2
 
 # meta server url
-dev_meta=http://10.21.6.95:8080
+dev_meta=http://10.90.32.61:8080
 #fat_meta=http://localhost:8080
-uat_meta=http://10.21.6.96:8080
-pro_meta=http://10.21.6.97:8080
+uat_meta=http://10.90.32.62:8080
+pro_meta=http://10.90.32.63:8080
 
 META_SERVERS_OPTS="-Ddev_meta=$dev_meta -Dfat_meta=$fat_meta -Duat_meta=$uat_meta -Dpro_meta=$pro_meta"
 
